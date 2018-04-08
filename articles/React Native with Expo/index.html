@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-TW">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.1.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.1.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="對於很多開發者來說，對於未知領域的環境設定，是個大難點，Expo 將一切打包好，讓開發者能夠近乎零設定就能開始 Coding! ※ 手機版本必須是 Android 4.4 或是 iOS 9.0 以上">
+<meta name="keywords" content="React Native">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native with Expo">
+<meta property="og:url" content="http://yoursite.com/articles/React Native with Expo/index.html">
+<meta property="og:site_name" content="Shizuku&#39;s">
+<meta property="og:description" content="對於很多開發者來說，對於未知領域的環境設定，是個大難點，Expo 將一切打包好，讓開發者能夠近乎零設定就能開始 Coding! ※ 手機版本必須是 Android 4.4 或是 iOS 9.0 以上">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2018-04-08T17:43:09.079Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native with Expo">
+<meta name="twitter:description" content="對於很多開發者來說，對於未知領域的環境設定，是個大難點，Expo 將一切打包好，讓開發者能夠近乎零設定就能開始 Coding! ※ 手機版本必須是 Android 4.4 或是 iOS 9.0 以上">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/articles/React Native with Expo/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>React Native with Expo | Shizuku's</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> 
+
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Shizuku's</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+          
+  
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首頁</a>
+</li>
+
+      
+        
+        
+          
+  
+  <li class="menu-item menu-item-tags menu-item-active">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />標籤</a>
+</li>
+
+      
+        
+        
+          
+  
+  <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分類</a>
+</li>
+
+      
+        
+        
+          
+  
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />歸檔</a>
+</li>
+
+      
+
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/articles/React Native with Expo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shizuku">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shizuku's">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">React Native with Expo</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-04-09T12:23:01+08:00">2018-04-09</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Javascript/" itemprop="url" rel="index"><span itemprop="name">Javascript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>對於很多開發者來說，對於未知領域的環境設定，是個大難點，Expo 將一切打包好，讓開發者能夠近乎零設定就能開始 Coding!</p>
+<p>※ 手機版本必須是 Android 4.4 或是 iOS 9.0 以上</p>
+<a id="more"></a>
+<h2 id="為何使用-Expo"><a href="#為何使用-Expo" class="headerlink" title="為何使用 Expo"></a>為何使用 Expo</h2><ul>
+<li>不需接觸 native code 如 Java，若遇到一定要修改 native code 的情況則要 <a href="https://docs.expo.io/versions/latest/guides/detach.html" target="_blank" rel="noopener">detach</a>，Expo 一直致力於功能擴充，好用、常見的套件通常會被涵蓋</li>
+<li>呈上點的好處是可直接在<a href="https://snack.expo.io/" target="_blank" rel="noopener">網頁</a>、文字編輯器開發 app，也意味不需 Xcode 就能開發 iOS app!</li>
+<li>不需 Xcode、Android Studio 就能打開 app，也能一鍵製作 apk、ipa</li>
+</ul>
+<h2 id="Get-Started"><a href="#Get-Started" class="headerlink" title="Get Started"></a>Get Started</h2><p>先準備好一些東西</p>
+<ol>
+<li>最新的 Node.js</li>
+<li>Expo 圖形介面工具 <a href="https://docs.expo.io/versions/latest/introduction/installation.html#desktop-development-tool-xde" target="_blank" rel="noopener">XDE</a> (本文使用 2.22.1版)</li>
+<li>手機端 <a href="https://docs.expo.io/versions/latest/introduction/installation.html#mobile-client-expo-for-ios-and-android" target="_blank" rel="noopener">app (Expo Client)</a> 或是模擬器</li>
+<li>React Native Debugger (optional)</li>
+</ol>
+<h2 id="動手囉"><a href="#動手囉" class="headerlink" title="動手囉"></a>動手囉</h2><h3 id="打開-Expo-XDE"><a href="#打開-Expo-XDE" class="headerlink" title="打開 Expo XDE"></a>打開 Expo XDE</h3><ul>
+<li><p>按下 Create new project …</p>
+<ul>
+<li>選擇 Tab Navigation 有助於了解簡單 app 之 code 架構</li>
+<li><p>選擇 Blank 開啟空白專案</p>
+<p>選擇資料夾位置以及專案名稱後，開始下載必要檔案，之後 XDE 會自動開啟專案，記得要在該資料夾內執行<code>npm install</code>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// in your project's root directory</span><br><span class="line"><span class="meta">&gt;</span> npm install</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>程式碼 Host 方式</p>
+<ul>
+<li>預設是 Tunnel，按下右上角的 Share 後，透過 QR Code 就可以在實體手機開啟 app (Expo Client)。</li>
+<li>建議改為 LAN，讓手機和電腦處於同一個 Wi-Fi 底下，速度較快。</li>
+</ul>
+</li>
+</ul>
+<pre><code>※ 若使用實體手機 Wi-Fi 訊號需夠強，不然會卡卡的 debug 很痛苦...
+</code></pre><h3 id="開始-Coding"><a href="#開始-Coding" class="headerlink" title="開始 Coding"></a>開始 Coding</h3><ul>
+<li>試試開啟 app</li>
+</ul>
+<pre><code>手機打開 Expo Client 掃描 QR Code，就會開始打包專案的 code，完成後就會開啟 app，第一個畫面會提示可以修改檔案讓 app 產生變化。
+</code></pre><ul>
+<li><p>開始編輯 app</p>
+<p>  改變 code 時 reload 的方式有兩種：</p>
+<ul>
+<li>Live Reload，整個 app 自動重新整理。</li>
+<li>Hot Reload，保持原狀態，將更改的部分新增進 app。</li>
+<li><p>Reload JS Bundle，顧名思義重新打包、持行 code。</p>
+<p>一般來說時常微調畫面，Hot Reload 是最合適、最省時的。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h3><ul>
+<li>app 的 log 會顯示在 XDE 右側的框框內。</li>
+<li>使用 React Native Debugger 擁有更棒的 Debug 體驗 (RN Debugger 設定)。</li>
+</ul>
+<h2 id="重要套件"><a href="#重要套件" class="headerlink" title="重要套件"></a>重要套件</h2><h3 id="react-redux"><a href="#react-redux" class="headerlink" title="react-redux"></a>react-redux</h3><p>react 中，更改畫面是由各個 component 的 state 控制，當 app 大起來後，會漸漸變得複雜，redux 簡單來說就是讓 root component 集中管理整個 app 的 state，讓 state 變得容易控制、取得。</p>
+<h3 id="redux-persist"><a href="#redux-persist" class="headerlink" title="redux-persist"></a>redux-persist</h3><p>大部分時候，需要將 app 的狀態保存起來，總不能每次打開 app 都是教學歡迎畫面吧？這個套件將 app 的狀態儲存進手機內，打開 app 時讀取資料。</p>
+<h3 id="react-navigation"><a href="#react-navigation" class="headerlink" title="react-navigation"></a>react-navigation</h3><p>app 是由多個畫面組成，這個套件管理所有的畫面設定，包括呈現、動畫等等，另外還提供 SafeView，讓 app 預留狀態欄空間等等。</p>
+<h3 id="UI-套件"><a href="#UI-套件" class="headerlink" title="UI 套件"></a>UI 套件</h3><ul>
+<li>react-native-elements</li>
+<li>native-base</li>
+</ul>
+<p>非常適合簡單元件的加入，但在兩種平台可能看起來不一樣，需要多加注意。</p>
+<h2 id="RN-StyleSheet-和-Web-CSS-之區別"><a href="#RN-StyleSheet-和-Web-CSS-之區別" class="headerlink" title="RN StyleSheet 和 Web CSS 之區別"></a>RN StyleSheet 和 Web CSS 之區別</h2><h3 id="Variable-Style"><a href="#Variable-Style" class="headerlink" title="Variable Style"></a>Variable Style</h3><ul>
+<li>react-native 之 style 都是以物件傳入元件，沒有 CSS class，因此 style 變數都是駝峰，值也有些許不同，以下為範例：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; StyleSheet, View &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> styles = StyleSheet.create(&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    borderRadius: <span class="number">3</span>, <span class="comment">// 沒有單位</span></span><br><span class="line">    backgroundColor: <span class="string">'rgb(22,22,22)'</span>, <span class="comment">// 字串</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Container = <span class="function"><span class="params">()</span> =&gt;</span> &lt;View style=&#123;styles.container&#125; /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>※ 使用 StyleSheet 的原因是它會產生一個 style ID 傳入元件，防止每次 render 時都產生一個新的 style 物件。</p>
+<h3 id="元件排版"><a href="#元件排版" class="headerlink" title="元件排版"></a>元件排版</h3><ul>
+<li><p>螢幕畫面長寬需引入 Dimensions library。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Dimensions &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"><span class="keyword">const</span> &#123; width, height &#125; = Dimensions.get(<span class="string">'window'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>基本 block 元件如 View 的內容排版都是 flexbox，因此不須加入 display: flex，且常常要設定 flex，也就是 CSS 的 flex-grow。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> styles = StyleSheet.create(&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    flex: <span class="number">1</span>,</span><br><span class="line">    justifyContent: <span class="string">'center'</span>,</span><br><span class="line">    alignItems: <span class="string">'center'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Position 則沒有 fixed，使用 absolute 就相當夠用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> styles = StyleSheet.create(&#123;</span><br><span class="line">  header: &#123;</span><br><span class="line">    height: <span class="number">30</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  headerRight: &#123;</span><br><span class="line">    position: <span class="string">'absolute'</span>,</span><br><span class="line">    right: <span class="number">0</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>根據平台設定不同的 style</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> styles = StyleSheet.create(&#123;</span><br><span class="line">  Container: &#123;</span><br><span class="line">    flex: <span class="number">1</span>,</span><br><span class="line">    ...Platform.select(&#123; <span class="comment">// 元件加入陰影，兩種設定方式不同</span></span><br><span class="line">      ios: &#123;</span><br><span class="line">        shadowColor:   <span class="string">'black'</span>,</span><br><span class="line">        shadowOffset: &#123; <span class="attr">height</span>:   <span class="number">-3</span> &#125;,</span><br><span class="line">        shadowOpacity:   <span class="number">0.1</span>,</span><br><span class="line">        shadowRadius:   <span class="number">3</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      android: &#123;</span><br><span class="line">        elevation:   <span class="number">20</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;),</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="小提醒"><a href="#小提醒" class="headerlink" title="小提醒"></a>小提醒</h2><h3 id="Overflow"><a href="#Overflow" class="headerlink" title="Overflow"></a>Overflow</h3><ul>
+<li>Android 中元件預設 overflow 為 hidden 且無法更改。</li>
+<li>iOS 則是預設 visible<h3 id="Status-Bar"><a href="#Status-Bar" class="headerlink" title="Status Bar"></a>Status Bar</h3>畫面中需要為狀態列預留空間，或是客製化狀態列，react-native 中有 SafeAreaView 可以使用。</li>
+<li>Android 預設為黑色</li>
+<li>iOS 預設為透明<h3 id="平台特色"><a href="#平台特色" class="headerlink" title="平台特色"></a>平台特色</h3></li>
+<li>Android 之元件多為 Material design，且有實體返回鍵需要處理。</li>
+<li>iOS 則有許多漸進動畫，通常是以畫面右滑做為返回手勢</li>
+</ul>
+<p>但畫面之設計並沒有硬性規定，可以自由發揮。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React-Native/" rel="tag"><i class="fa fa-tag"></i> React Native</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/articles/test/" rel="next" title="test">
+                <i class="fa fa-chevron-left"></i> test
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Shizuku</p>
+              <p class="site-description motion-element" itemprop="description">為了元件耗上整天已為常態</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">文章</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分類</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">標籤</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#為何使用-Expo"><span class="nav-number">1.</span> <span class="nav-text">為何使用 Expo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Get-Started"><span class="nav-number">2.</span> <span class="nav-text">Get Started</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#動手囉"><span class="nav-number">3.</span> <span class="nav-text">動手囉</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打開-Expo-XDE"><span class="nav-number">3.1.</span> <span class="nav-text">打開 Expo XDE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#開始-Coding"><span class="nav-number">3.2.</span> <span class="nav-text">開始 Coding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug"><span class="nav-number">3.3.</span> <span class="nav-text">Debug</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重要套件"><span class="nav-number">4.</span> <span class="nav-text">重要套件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#react-redux"><span class="nav-number">4.1.</span> <span class="nav-text">react-redux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redux-persist"><span class="nav-number">4.2.</span> <span class="nav-text">redux-persist</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#react-navigation"><span class="nav-number">4.3.</span> <span class="nav-text">react-navigation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UI-套件"><span class="nav-number">4.4.</span> <span class="nav-text">UI 套件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RN-StyleSheet-和-Web-CSS-之區別"><span class="nav-number">5.</span> <span class="nav-text">RN StyleSheet 和 Web CSS 之區別</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Variable-Style"><span class="nav-number">5.1.</span> <span class="nav-text">Variable Style</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元件排版"><span class="nav-number">5.2.</span> <span class="nav-text">元件排版</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小提醒"><span class="nav-number">6.</span> <span class="nav-text">小提醒</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overflow"><span class="nav-number">6.1.</span> <span class="nav-text">Overflow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Status-Bar"><span class="nav-number">6.2.</span> <span class="nav-text">Status Bar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平台特色"><span class="nav-number">6.3.</span> <span class="nav-text">平台特色</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shizuku</span>
+  <div class="powered-by">
+    
+  </div>
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powerd by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+
+
+
+<span class="post-meta-divider">|</span>
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  <span id="busuanzi_value_site_uv"></span>
+</span>
+<i class="fa fa-eye"></i><span id="busuanzi_container_site_pv">
+  <span id="busuanzi_value_site_pv"></span>
+</span>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.1.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
