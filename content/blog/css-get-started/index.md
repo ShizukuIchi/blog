@@ -247,7 +247,7 @@ absolute 會向上尋找最近的可定位元素作為基礎來偏移，與 rela
 
 另外還多了 `right`、`bottom` 可以用，以下範例使用 `right: 0px;`，他偏到右邊並不是基於黑框，而是更外面的文章邊界，剛好整篇文章是可定位元素，所以他就靠著最右邊了。
 
-注意黑框變窄了，這是因為 absolute 是基於他人做偏移，所以不會參與排版，所以 outer 的內容大小就空了。
+注意黑框變窄了，這是因為 absolute 是基於他人做偏移，所以不會參與排版， outer 的內容就空了。
 ```css
 .outer {
   border: 1px solid black;
@@ -447,3 +447,6 @@ fixed 跟 absolute 其實有點像，但 fixed 是直接找到瀏覽器邊界作
 <div style="height: 500px; display: flex; align-items: center; justify-content: center; border: 1px solid black; margin-bottom: 20px;">
 <div style="background-color: pink; border: 2px solid red; width: 100px; height: 100px;">我是想置中的 div</div>
 </div>
+
+# 後記
+光是看完了一定不夠，動手把文中提到的重點都試過一遍才能幫助記憶跟了解哦～
