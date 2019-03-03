@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[網頁小筆記]]></title><description><![CDATA[HTML，CSS 網頁重要基礎小筆記]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 03 Mar 2019 12:29:29 GMT</lastBuildDate><item><title><![CDATA[CSS 入門]]></title><description><![CDATA[本篇教學適合剛接觸網頁排版的人，我會在教學中提及重要的基礎，想要搞懂 CSS 這些觀念一個都不能少，了解後網頁基本的 Layout 以及樣式修改就不是問題囉！  基礎說明 網頁的骨架由 HTML 組成， CSS 就像是器官、外觀，Javascript 則是大腦，在此著重 CSS…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//css-get-started/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//css-get-started/</guid><pubDate>Sat, 02 Mar 2019 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;本篇教學適合剛接觸網頁排版的人，我會在教學中提及重要的基礎，想要搞懂 CSS 這些觀念一個都不能少，了解後網頁基本的 Layout 以及樣式修改就不是問題囉！ &lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[網頁小筆記]]></title><description><![CDATA[HTML，CSS 網頁重要基礎小筆記]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 03 Mar 2019 13:59:06 GMT</lastBuildDate><item><title><![CDATA[CSS 入門]]></title><description><![CDATA[本篇教學適合剛接觸網頁排版的人，我會在教學中提及重要的基礎，想要搞懂 CSS 這些觀念一個都不能少，了解後網頁基本的 Layout 以及樣式修改就不是問題囉！  基礎說明 網頁的骨架由 HTML 組成， CSS 就像是器官、外觀，Javascript 則是大腦，在此著重 CSS…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//css-get-started/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//css-get-started/</guid><pubDate>Sat, 02 Mar 2019 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;本篇教學適合剛接觸網頁排版的人，我會在教學中提及重要的基礎，想要搞懂 CSS 這些觀念一個都不能少，了解後網頁基本的 Layout 以及樣式修改就不是問題囉！ &lt;/p&gt;
 &lt;h1&gt;基礎說明&lt;/h1&gt;
 &lt;p&gt;網頁的骨架由 HTML 組成， CSS 就像是器官、外觀，Javascript 則是大腦，在此著重 CSS 的介紹。&lt;/p&gt;
 &lt;p&gt;HTML Tag 有很多種如 &lt;code class=&quot;language-text&quot;&gt;div&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;span&lt;/code&gt; 等等，而最常看到的是 &lt;code class=&quot;language-text&quot;&gt;div&lt;/code&gt;，因為他幾乎沒有預設的 CSS 屬性，很適合作為基本的元素拿來修改樣式。&lt;/p&gt;
@@ -192,7 +192,7 @@ height: 200px;&quot;&gt;我是 div&lt;/div&gt;
 &lt;h3&gt;position: absolute;&lt;/h3&gt;
 &lt;p&gt;absolute 會向上尋找最近的可定位元素作為基礎來偏移，與 relative 的差別是，relative 是以自己原本的位置為錨點，absolute 是找父元素甚至是爺爺元素等等，直到找到非 static 的元素或是，並以他為錨點偏移。&lt;/p&gt;
 &lt;p&gt;另外還多了 &lt;code class=&quot;language-text&quot;&gt;right&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;bottom&lt;/code&gt; 可以用，以下範例使用 &lt;code class=&quot;language-text&quot;&gt;right: 0px;&lt;/code&gt;，他偏到右邊並不是基於黑框，而是更外面的文章邊界，剛好整篇文章是可定位元素，所以他就靠著最右邊了。&lt;/p&gt;
-&lt;p&gt;注意黑框變窄了，這是因為 absolute 是基於他人做偏移，所以不會參與排版，所以 outer 的內容大小就空了。&lt;/p&gt;
+&lt;p&gt;注意黑框變窄了，這是因為 absolute 是基於他人做偏移，所以不會參與排版， outer 的內容就空了。&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;css&quot;&gt;&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.outer&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token property&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1px solid black&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;token property&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 10px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -362,4 +362,6 @@ height: 200px;&quot;&gt;我是 div&lt;/div&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div style=&quot;height: 500px; display: flex; align-items: center; justify-content: center; border: 1px solid black; margin-bottom: 20px;&quot;&gt;
 &lt;div style=&quot;background-color: pink; border: 2px solid red; width: 100px; height: 100px;&quot;&gt;我是想置中的 div&lt;/div&gt;
-&lt;/div&gt;</content:encoded></item></channel></rss>
+&lt;/div&gt;
+&lt;h1&gt;後記&lt;/h1&gt;
+&lt;p&gt;光是看完了一定不夠，動手把文中提到的重點都試過一遍才能幫助記憶跟了解哦～&lt;/p&gt;</content:encoded></item></channel></rss>
