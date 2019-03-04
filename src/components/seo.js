@@ -24,16 +24,18 @@ function SEO({ description, lang, meta, keywords, title }) {
       }
     `
   )
-
   const metaDescription = description || site.siteMetadata.description
-
+  const pageTitle =
+    title === "All posts"
+      ? `${site.siteMetadata.author}'s ${site.siteMetadata.title}`
+      : title
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={pageTitle}
       meta={[
         {
           name: `description`,
