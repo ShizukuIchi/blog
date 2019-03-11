@@ -1,11 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[網頁小筆記]]></title><description><![CDATA[HTML，CSS 網頁重要基礎小筆記]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Mon, 04 Mar 2019 15:01:56 GMT</lastBuildDate><item><title><![CDATA[CSS 基礎]]></title><description><![CDATA[本篇教學適合剛接觸網頁排版的人，我會在教學中提及重要的基礎，了解後網頁基本的 Layout 以及樣式修改就不是問題囉！  前情提要 網頁的骨架由 HTML 組成， CSS 就像是器官、外觀，Javascript 則是大腦，在此著重 CSS 的介紹。 HTML Tag…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//css-get-started/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//css-get-started/</guid><pubDate>Sat, 02 Mar 2019 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;本篇教學適合剛接觸網頁排版的人，我會在教學中提及重要的基礎，了解後網頁基本的 Layout 以及樣式修改就不是問題囉！ &lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[網頁小筆記]]></title><description><![CDATA[HTML，CSS 網頁重要基礎小筆記]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Mon, 11 Mar 2019 20:14:29 GMT</lastBuildDate><item><title><![CDATA[Javascript 開發環境簡介]]></title><description><![CDATA[為什麼 node_modules 裡面總是塞了一堆東西？ 本文會提到如何準備 Javascript 的開發環境以及專案架構。 Node.js 畢竟程式只是一堆文字，要有人負責把文字轉換成實際的動作並執行， Nodejs  就肩負這個重責大任。 從官方網站選擇 LTS…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//js-dev-env/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//js-dev-env/</guid><pubDate>Wed, 06 Mar 2019 05:32:29 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;為什麼 node_modules 裡面總是塞了一堆東西？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本文會提到如何準備 Javascript 的開發環境以及專案架構。&lt;/p&gt;
+&lt;h2&gt;Node.js&lt;/h2&gt;
+&lt;p&gt;畢竟程式只是一堆文字，要有人負責把文字轉換成實際的動作並執行，&lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Nodejs&lt;/a&gt; 就肩負這個重責大任。&lt;/p&gt;
+&lt;p&gt;從官方網站選擇 LTS 版本下載並安裝後一路 Next 就能安裝完畢，確認是否安裝成功的話可以在 &lt;code class=&quot;language-text&quot;&gt;命令提示字元&lt;/code&gt; 或 &lt;code class=&quot;language-text&quot;&gt;Terminal&lt;/code&gt; 檢查有沒有出現版本資訊。 (沒有就是失敗啦)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ node --version
+v8.12.0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;npm&lt;/h2&gt;
+&lt;p&gt;npm 是 Node.js 內建的套件管理工具，可以透過 npm 安裝好用的套件。&lt;/p&gt;
+&lt;p&gt;Javascript 擁有廣大的社群，其中許多神人、前輩都會把寫好的工具、套件發表出來讓大家使用，上網搜尋 Javascript 相關套件的時候就會看到如何安裝，通常會像是：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ npm install [套件名稱]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;安裝完的時候會在所在的資料夾內創建一個新的資料夾 &lt;code class=&quot;language-text&quot;&gt;node_modules&lt;/code&gt; 以及一個檔案 &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;，前者就是已經已安裝套件的程式碼集散地，當專案大起來也會隨著變得超級大包。&lt;/p&gt;
+&lt;h2&gt;package.json&lt;/h2&gt;
+&lt;p&gt;以 Javascript 開發時，通常會以專案為單位，一個專案所用到的所有檔案都會放在某個資料夾裡面，&lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; 會出現在此資料夾下的第一層。&lt;/p&gt;
+&lt;p&gt;內容大概如下，其中最重要的是 &lt;code class=&quot;language-text&quot;&gt;dependencies&lt;/code&gt;，代表此專案會用到的 npm 套件以及版本。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;我的專案名稱&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;這是一個棒棒的專案&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;0.1.0&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;author&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Shizuku&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;dependencies&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;parcel-bundler&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;^1.12.0&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;當專案開發一半想要轉移陣地時 (換電腦、傳給別人…)，要注意絕對不會讓 &lt;code class=&quot;language-text&quot;&gt;node_modules&lt;/code&gt; 一起搬家，只需要把專案內的程式碼和 &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; 打包起來就可以了，搬家完畢後只需要透過：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ npm install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;npm 就會把 &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; 內的 &lt;code class=&quot;language-text&quot;&gt;dependencies&lt;/code&gt; 全安裝一遍，&lt;code class=&quot;language-text&quot;&gt;node_modules&lt;/code&gt; 也會隨之出現。&lt;/p&gt;
+&lt;h2&gt;專案架構&lt;/h2&gt;
+&lt;p&gt;下圖為一個簡單專案資料夾下的檔案架構：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/aT9soxo.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;通常會把 Javascript 程式碼放在 &lt;code class=&quot;language-text&quot;&gt;src&lt;/code&gt; 資料夾內，其他就是圖片、專案說明手冊等等，而 &lt;code class=&quot;language-text&quot;&gt;node_modules&lt;/code&gt; 只有在輸入 &lt;code class=&quot;language-text&quot;&gt;npm install&lt;/code&gt; 之後才會出現。&lt;/p&gt;
+&lt;h2&gt;安裝全域、開發用套件&lt;/h2&gt;
+&lt;p&gt;有時候套件安裝說明會加入一些參數：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ npm install parcel-bundler -G
+$ npm install gh-pages -D&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;-G&lt;/code&gt; 代表是跟 npm 安裝在一起，也就是安裝一次之後，不管在哪都可以使用，不只侷限於某個專案資料夾內。&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;-D&lt;/code&gt; 代表是開發時才會用到的套件，會被列在 &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; 中的 &lt;code class=&quot;language-text&quot;&gt;devDependencies&lt;/code&gt;，雖然 &lt;code class=&quot;language-text&quot;&gt;npm install&lt;/code&gt; 時也會被安裝，但在安裝他人發布的套件時 npm 就會自動避開。&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[CSS 基礎]]></title><description><![CDATA[本篇教學適合剛接觸網頁排版的人，我會在教學中提及重要的基礎，了解後網頁基本的 Layout 以及樣式修改就不是問題囉！ 前情提要 網頁的骨架由 HTML 組成， CSS 就像是器官、外觀，Javascript 則是大腦，在此著重 CSS 的介紹。 HTML Tag…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//css-get-started/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//css-get-started/</guid><pubDate>Sat, 02 Mar 2019 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;本篇教學適合剛接觸網頁排版的人，我會在教學中提及重要的基礎，了解後網頁基本的 Layout 以及樣式修改就不是問題囉！&lt;/p&gt;
 &lt;h1&gt;前情提要&lt;/h1&gt;
 &lt;p&gt;網頁的骨架由 HTML 組成， CSS 就像是器官、外觀，Javascript 則是大腦，在此著重 CSS 的介紹。&lt;/p&gt;
 &lt;p&gt;HTML Tag 有很多種如 &lt;code class=&quot;language-text&quot;&gt;div&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;span&lt;/code&gt; 等等，而最常看到的是 &lt;code class=&quot;language-text&quot;&gt;div&lt;/code&gt;，因為他幾乎沒有預設的 CSS 屬性，很適合作為基本的元素拿來修改樣式。&lt;/p&gt;
 &lt;p&gt;下方的 HTML 不經過 CSS 修飾會如框框內顯示，&lt;code class=&quot;language-text&quot;&gt;b&lt;/code&gt; 標籤就是一個擁有預設粗體屬性的 tag ，(為了方便觀看我加了一個外框)&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;b&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Hello&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;b&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;world!&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;b&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Hello&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;b&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;world!&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div style=&quot;border: 1px solid black; padding: 10px; margin-bottom: 50px;&quot;&gt;
 &lt;div&gt;
   &lt;b&gt;Hello&lt;/b&gt; &lt;span&gt;world!&lt;/span&gt;
@@ -57,23 +95,23 @@
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;content&lt;/code&gt;: 內容&lt;/p&gt;
 &lt;div style=&quot;border: 1px dashed black; margin-bottom: 20px; width: 262px&quot;&gt;
 &lt;div style=&quot;position: relative; margin: 30px; border: 30px solid #ffc107; padding: 30px; background-color: #7ac17a;&quot;&gt;
-&lt;div style=&quot;background-color: #7d99ff; width: 80px; text-align: center; line-height: 30px;&quot;&gt;
-  內容
-&lt;/div&gt;
-&lt;div style=&quot;position: absolute; text-align: center; line-height: 30px; width: 80px; top: 0px&quot;&gt;
- 內距
-&lt;/div&gt;
-&lt;div style=&quot;position: absolute; text-align: center; line-height: 50px; width: 80px; top: -40px&quot;&gt;
- 邊框
-&lt;/div&gt;
-&lt;div style=&quot;position: absolute; text-align: center; line-height: 50px; width: 80px; top: -70px&quot;&gt;
- 外距
-&lt;/div&gt;
+  &lt;div style=&quot;background-color: #7d99ff; width: 80px; text-align: center; line-height: 30px;&quot;&gt;
+    內容
+  &lt;/div&gt;
+  &lt;div style=&quot;position: absolute; text-align: center; line-height: 30px; width: 80px; top: 0px&quot;&gt;
+   內距
+  &lt;/div&gt;
+  &lt;div style=&quot;position: absolute; text-align: center; line-height: 50px; width: 80px; top: -40px&quot;&gt;
+   邊框
+  &lt;/div&gt;
+  &lt;div style=&quot;position: absolute; text-align: center; line-height: 50px; width: 80px; top: -70px&quot;&gt;
+   外距
+  &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;再拿剛剛的東西來改，一號 &lt;code class=&quot;language-text&quot;&gt;div&lt;/code&gt; 加上 &lt;code class=&quot;language-text&quot;&gt;padding-top: 20px;&lt;/code&gt;，上方的內距為20px，元素上方被內距撐開所以變寬了。&lt;/p&gt;
+&lt;p&gt;再拿剛剛的東西來改，一號 &lt;code class=&quot;language-text&quot;&gt;div&lt;/code&gt; 加上 &lt;code class=&quot;language-text&quot;&gt;padding-top: 20px;&lt;/code&gt;，上方的內距為 20px，元素上方被內距撐開所以變寬了。&lt;/p&gt;
 &lt;div style=&quot;border: 1px solid black; padding: 10px; margin-bottom: 20px;&quot;&gt;
 &lt;div style=&quot;background-color: pink; padding-top: 20px;&quot;&gt;我是 div&lt;/div&gt;
 &lt;div style=&quot;background-color: pink;&quot;&gt;我是 div 2&lt;/div&gt;
@@ -206,7 +244,7 @@ height: 200px;&quot;&gt;我是 div&lt;/div&gt;
 &lt;div style=&quot;border: 1px solid black; padding: 10px; margin-bottom: 20px;&quot;&gt;
 &lt;div style=&quot;position: absolute; background-color: pink; border: 1px solid red;right: 0px;&quot;&gt;我是 absolute div&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;一般想讓一個元素自由定位，會先讓他有個父元素做基本定位，再做偏移，在 outer 設定 &lt;code class=&quot;language-text&quot;&gt;position: relative;&lt;/code&gt; 之後，inner 就會貼著 outer 右邊界了。 &lt;/p&gt;
+&lt;p&gt;一般想讓一個元素自由定位，會先讓他有個父元素做基本定位，再做偏移，在 outer 設定 &lt;code class=&quot;language-text&quot;&gt;position: relative;&lt;/code&gt; 之後，inner 就會貼著 outer 右邊界了。&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;css&quot;&gt;&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.outer&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token property&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; relative&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;token property&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1px solid black&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -332,9 +370,8 @@ height: 200px;&quot;&gt;我是 div&lt;/div&gt;
   &lt;span class=&quot;token property&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 100px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;token property&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 100px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;token property&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; skyblue&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;margin-top&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; -50px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
+  &lt;span class=&quot;token property&quot;&gt;margin-top&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; -50px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;token property&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; relative&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div style=&quot;border: 1px solid black; padding: 10px; margin-bottom: 20px;&quot;&gt;
 &lt;div style=&quot;z-index: 1; position: relative; background-color: pink; border: 2px solid red; width: 100px; height: 100px;&quot;&gt;我是 div&lt;/div&gt;
