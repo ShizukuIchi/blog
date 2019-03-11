@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Difficulty from "../components/difficulty"
 import { rhythm } from "../utils/typography"
 
 class BlogIndex extends React.Component {
@@ -36,6 +37,7 @@ class BlogIndex extends React.Component {
                 </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
+              <Difficulty difficulty={node.frontmatter.difficulty} />
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
@@ -69,6 +71,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            difficulty
           }
         }
       }
