@@ -1,11 +1,13 @@
 ---
 title: 用 CSS 動畫讓網頁活起來
-date: "2019-03-04T22:40:32.169Z"
+date: "2019-03-13T09:24:59.808Z"
 description: 本文帶你初探 CSS 互動和動畫。
-difficulty: 簡單
+difficulty: 入門
 ---
 
-只要用一點簡單的 CSS 就能產生美美的互動效果以及動畫。
+CSS 其實是非常強大的，只要一點簡單的 CSS 就能產生美美的互動效果以及動畫。
+
+## transition 補間動畫
 
 `transition-property`: 定義哪些 properties 會被轉場效果影響。
 `transition-duration`: 定義 transition 執行的時間。

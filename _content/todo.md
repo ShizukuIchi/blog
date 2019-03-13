@@ -1,0 +1,12 @@
+- [ ] parcel
+  - [ ] pug
+  - [ ] scss
+- [ ] git
+- [ ] css selector
+- [ ] css psudo
+- [ ] css animation
+  - [ ] negative delay
+  - [ ] transitinn
+  - [ ] keyframes
+- [ ] grid cheat sheet
+- [ ] flex cheat sheet
