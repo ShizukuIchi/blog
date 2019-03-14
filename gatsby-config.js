@@ -4,7 +4,7 @@ module.exports = {
     title: `網頁小筆記`,
     author: `Shizuku`,
     description: `HTML，CSS 網頁重要基礎小筆記`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://sh1zuku.csie.io/blog`,
     social: {
       github: `ShizukuIchi`,
     },

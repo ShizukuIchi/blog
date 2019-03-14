@@ -41,7 +41,7 @@ function Bio() {
               網頁小筆記 by{" "}
               <a href={`https://github.com/${social.github}`}>Shizuku</a>
               <br />
-              描述著一路走來的點點滴滴。
+              想要學網頁嗎？想要的話都教你，趕快來看吧！我把最重要的基礎都整理在這兒了！
             </p>
           </div>
         )
