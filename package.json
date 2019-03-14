@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "blog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Shizuku's blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Shizuku <shizukuichi@gmail.com>",
   "dependencies": {
     "gatsby": "^2.1.19",
     "gatsby-image": "^2.0.30",
@@ -44,7 +44,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/ShizukuIchi/blog.git"
   },
   "scripts": {
     "build": "gatsby build",

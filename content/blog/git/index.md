@@ -1,41 +1,97 @@
 ---
 title: Git 版本控制
 date: "2019-03-14T04:53:22.639Z"
-description: 程式碼專用的雲端空間
+description: 還在用截圖、USB 傳程式碼嗎？別鬧了
 difficulty: 入門
 ---
 
-> Git 就是 Coding 界的時光機、平行世界、SL 大法。
+> Git 就是 Coding 界的時光機、抓戰犯利器。
 
-## Git 版本控制
+## 概念介紹
 
-開始前需要存放 Code 的雲端空間，如 Github、Gitlab、Bitbucket 等，建立帳號、數據庫等等動作不在此說明。
+Git 的主要功能就是紀錄專案的**版本**，假設一開始寫完的程式碼是第一版，之後每次修改時就可以更新版本，所有的版本資訊都會儲存在 `.git` 資料夾，可以在各個版本間切換，讓程式碼回到三天前的版本是完全沒問題的。
 
-要注意的是，數據庫中的狀態和本地的狀態是分開的，**同步**的動作很重要!!
+開始前需要建立存放 Code 的雲端空間如 [Github](https://github.com/) ，快去建立帳號還有安裝 [Git](https://git-scm.com/downloads)。
 
-### Git 基本指令
+## 前置動作
 
-先下載、安裝 [Git](https://git-scm.com/downloads) 吧，並且將 Git 加入環境變數，  
-進入專案的根目錄，在 cmd 中輸入：
-
-```
-> git init
-```
-
-會發現專案中多了一個資料夾 `.git` ，它就是 git 版本資訊儲存的地方。  
-接下來可以將整個數據庫複製到本地，使用 `clone` 指令會新增並追蹤該數據庫，並取名為 `origin`：
+先建立一個新的專案資料夾，假設叫做 `project`  
+**進入資料夾**後開啟 Terminal 並輸入 `git init`
 
 ```
-> git clone <repository_url>
+$ git init
+Initialized empty Git repository in .../project/.git/
 ```
 
-將檔案複製到本地之後，還需要取得各個分支的資訊，才能切換分支：
+此時專案中多了一個資料夾 `.git` ，它就是 git 版本資訊儲存的地方，接下來先隨便新增一個檔案叫 `a.txt`，並在裡頭隨意輸入一些文字。
+
+回到 Terminal 並輸入萬用指令 `git status`
 
 ```
-> git fetch origin
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        a.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-專案可以添加多個數據庫，要為它們取不同的名字 ( 預設是 origin )，手動新增程式庫的指令如下， `-u` 參數可以追蹤該數據庫：
+Terminal 會出現一些文字，代表當前的 Git 狀態以及提示，不確定要輸入什麼指令時就可以試試看 `git status`，可以解決大部分的問題。
+
+## 版控開始
+
+- git add 追蹤檔案
+
+  從 `git status` 的提示中得知 `a.txt` 這個檔案尚未被追蹤，`git add <file>...` 指令能將有變動的檔案加入追蹤，沒有被追蹤的檔案變動都不會被存入新版本。
+
+輸入 `git add a.txt` 還有 `git status`
+
+```
+$ git add a.txt
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   a.txt
+```
+
+翻成中文就是：有變動待確認，而且可以輸入`git rm --cached a.txt` 取消追蹤 `a.txt`，返回上一步。
+
+- git commit 儲存變動
+
+  用 commit 來確認並儲存變動，也就是更新專案版本，存檔的同時要附上一個訊息，以便之後辨識版本資訊。
+
+  輸入 `git commit -m "<你的改版訊息>"`，`-m` 是 message 的縮寫
+
+```
+$ git commit -m "新增 a.txt 檔案"
+[master (root-commit) 89aecbd] 新增 a.txt 檔案
+ 1 file changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 a.txt
+```
+
+翻譯蒟蒻：  
+一個檔案改變了，新增 1 行，刪除 0 行  
+新增 a.txt
+
+再輸入一次 `git status` 就會提示沒東西待確認，很乾淨
+
+```
+$ git status
+On branch master
+nothing to commit, working tree clean
+```
+
+之後就是不斷
 
 ```
 > git remote add [-u] <remote_name> <repository_url>
