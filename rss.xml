@@ -1,4 +1,150 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[網頁小筆記]]></title><description><![CDATA[HTML，CSS 網頁重要基礎小筆記]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 13 Mar 2019 09:31:17 GMT</lastBuildDate><item><title><![CDATA[React 快速上手]]></title><description><![CDATA[近年來前端開發框架漸漸從 JQuery 變為 Angular、Vue、React，JQuery 為何被取代呢？ Why React？ 有別於 JQuery 將邏輯和介面寫在一塊命令式語法，React…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//react/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//react/</guid><pubDate>Tue, 12 Mar 2019 02:42:47 GMT</pubDate><content:encoded>&lt;p&gt;近年來前端開發框架漸漸從 JQuery 變為 Angular、Vue、React，JQuery 為何被取代呢？&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[網頁小筆記]]></title><description><![CDATA[HTML，CSS 網頁重要基礎小筆記]]></description><link>https://sh1zuku.csie.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Sun, 17 Mar 2019 20:19:53 GMT</lastBuildDate><item><title><![CDATA[Git 版本控制]]></title><description><![CDATA[Git 就是 Coding 界的時光機、抓戰犯利器。 概念介紹 Git 的主要功能就是紀錄專案的 版本 ，假設一開始寫完的程式碼是第一版，之後每次修改時就可以更新版本，版本間可也以自由切換。 開始前請先安裝  Git…]]></description><link>https://sh1zuku.csie.io/blog/git/</link><guid isPermaLink="false">https://sh1zuku.csie.io/blog/git/</guid><pubDate>Thu, 14 Mar 2019 04:53:22 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;Git 就是 Coding 界的時光機、抓戰犯利器。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;概念介紹&lt;/h2&gt;
+&lt;p&gt;Git 的主要功能就是紀錄專案的&lt;strong&gt;版本&lt;/strong&gt;，假設一開始寫完的程式碼是第一版，之後每次修改時就可以更新版本，版本間可也以自由切換。&lt;/p&gt;
+&lt;p&gt;開始前請先安裝 &lt;a href=&quot;https://git-scm.com/downloads&quot;&gt;Git&lt;/a&gt;。&lt;/p&gt;
+&lt;h2&gt;前置動作&lt;/h2&gt;
+&lt;p&gt;先建立一個新的專案資料夾，假設叫做 &lt;code class=&quot;language-text&quot;&gt;learn-git&lt;/code&gt;
+&lt;strong&gt;進入資料夾&lt;/strong&gt;後開啟 Terminal 並輸入 &lt;code class=&quot;language-text&quot;&gt;git init&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;mkdir&lt;/span&gt; learn-git          &lt;span class=&quot;token comment&quot;&gt;# 建立資料夾&lt;/span&gt;
+$ &lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; learn-git             &lt;span class=&quot;token comment&quot;&gt;# 進入資料夾&lt;/span&gt;
+$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; init                 &lt;span class=&quot;token comment&quot;&gt;# 對這個資料夾開始版控&lt;/span&gt;
+Initialized empty Git repository &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;./learn-git/.git/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;此時專案中多了一個隱藏資料夾 &lt;code class=&quot;language-text&quot;&gt;.git&lt;/code&gt; ，它就是 git 版本資訊儲存的地方，接下來先隨便新增一個檔案叫 &lt;code class=&quot;language-text&quot;&gt;a.txt&lt;/code&gt;，並在裡頭隨意輸入一些文字。&lt;/p&gt;
+&lt;p&gt;回到 Terminal 並輸入萬用指令 &lt;code class=&quot;language-text&quot;&gt;git status&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; status
+On branch master
+
+No commits yet
+
+Untracked files:
+  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git add &amp;lt;file&gt;...&quot;&lt;/span&gt; to include &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; what will be committed&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        a.txt
+
+nothing added to commit but untracked files present &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git add&quot;&lt;/span&gt; to track&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Terminal 會出現一些文字，代表當前的 Git 狀態以及提示，不確定要輸入什麼指令時就可以試試看 &lt;code class=&quot;language-text&quot;&gt;git status&lt;/code&gt;，可以解決大部分的問題。&lt;/p&gt;
+&lt;h2&gt;版控開始&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;git add 追蹤檔案&lt;/p&gt;
+&lt;p&gt;從 &lt;code class=&quot;language-text&quot;&gt;git status&lt;/code&gt; 的提示中得知 &lt;code class=&quot;language-text&quot;&gt;a.txt&lt;/code&gt; 這個檔案尚未被追蹤，&lt;code class=&quot;language-text&quot;&gt;git add &amp;lt;file&amp;gt;...&lt;/code&gt; 指令能將檔案的變動加入暫存區，沒有被加入的檔案變動就不會被存入新版本。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;輸入 &lt;code class=&quot;language-text&quot;&gt;git add a.txt&lt;/code&gt; 還有 &lt;code class=&quot;language-text&quot;&gt;git status&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; add a.txt
+$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git rm --cached &amp;lt;file&gt;...&quot;&lt;/span&gt; to unstage&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        new file:   a.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;翻成中文就是：暫存區有變動待確認，而且可以輸入&lt;code class=&quot;language-text&quot;&gt;git rm --cached a.txt&lt;/code&gt; 把上次 &lt;code class=&quot;language-text&quot;&gt;a.txt&lt;/code&gt; 的變動從暫存區移除。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;git commit 儲存變動（改版）&lt;/p&gt;
+&lt;p&gt;用 commit 來確認並儲存變動，也就是更新專案版本，存檔的同時要附上一個訊息，以便之後辨識版本資訊。&lt;/p&gt;
+&lt;p&gt;輸入 &lt;code class=&quot;language-text&quot;&gt;git commit -m &amp;quot;&amp;lt;你的改版訊息&amp;gt;&amp;quot;&lt;/code&gt;，&lt;code class=&quot;language-text&quot;&gt;-m&lt;/code&gt; 是 message 的縮寫&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit -m &lt;span class=&quot;token string&quot;&gt;&quot;新增 a.txt&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;master &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;root-commit&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 89aecbd&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; 新增 a.txt
+ 1 &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; changed, 1 insertions&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;, 0 deletions&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+ create mode 100644 a.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;翻譯蒟蒻：&lt;br&gt;
+總共 1 個檔案改變了，新增 1 行，刪除 0 行&lt;br&gt;
+建立 a.txt 檔案&lt;/p&gt;
+&lt;p&gt;再輸入一次 &lt;code class=&quot;language-text&quot;&gt;git status&lt;/code&gt; 就會提示沒東西待確認，很乾淨&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; status
+On branch master
+nothing to commit, working tree clean&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;注意：經過改動並輸入 &lt;code class=&quot;language-text&quot;&gt;git add&lt;/code&gt; 後，若再繼續改動的話就要再輸入一次 &lt;code class=&quot;language-text&quot;&gt;git add&lt;/code&gt; 把最新一次的改動也放入暫存區， &lt;code class=&quot;language-text&quot;&gt;git commit&lt;/code&gt; 只會把暫存區的內容加入新版本。&lt;/p&gt;
+&lt;h2&gt;本地和遠端 Repository&lt;/h2&gt;
+&lt;p&gt;Repository 就是掌管程式碼以及版本資訊的倉庫，但真的很難翻，之後就直接叫 repo。&lt;/p&gt;
+&lt;p&gt;目前為止的步驟都是在本地進行，也就是改變本地 repo 的版本，但雲端也可以存放 repo，在合作、複製他人程式碼、換電腦的時候就很方便。&lt;/p&gt;
+&lt;p&gt;目前最大的雲端 repo 儲存空間就是 &lt;a href=&quot;https://github.com/&quot;&gt;Github&lt;/a&gt; ，趕緊建立帳號吧。&lt;/p&gt;
+&lt;h3&gt;建立 repo&lt;/h3&gt;
+&lt;p&gt;註冊完帳號後找到 &lt;code class=&quot;language-text&quot;&gt;New repository&lt;/code&gt; 的選項，隨意取個名字如 &lt;code class=&quot;language-text&quot;&gt;first-repo&lt;/code&gt;，然後按最下面的 Create repository。&lt;/p&gt;
+&lt;p&gt;當你想要創建一個全新的 repo 且還沒有任何程式碼的時候，就使用上方區塊的指令，前五行就是剛剛做的事情，最下方的兩行就是當你已經寫了一些東西，想要放入遠端 repo 的指令：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight has-highlighted-lines&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;# first-repo&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; README.md     &lt;span class=&quot;token comment&quot;&gt;# 建立一個新檔案並寫入 # first-repo&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; init                             &lt;span class=&quot;token comment&quot;&gt;# 開始版本控制&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; add README.md                    &lt;span class=&quot;token comment&quot;&gt;# 將變動放入暫存區&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit -m &lt;span class=&quot;token string&quot;&gt;&quot;first commit&quot;&lt;/span&gt;         &lt;span class=&quot;token comment&quot;&gt;# 確認改動並更新本地 repo 的版本&lt;/span&gt;
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; remote add origin git@github.com:&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;你的帳號&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;/first-repo.git&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; push -u origin master&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;git remote&lt;/h3&gt;
+&lt;p&gt;透過 &lt;code class=&quot;language-text&quot;&gt;git remote&lt;/code&gt; 可以在本地 repo 管理遠端 repo 地址，如果想要把本地 repo 同步到遠端 repo，首先要用 &lt;code class=&quot;language-text&quot;&gt;git remote add&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; remote add &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;remote 名稱&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;repo 地址&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;remote 名稱&lt;/code&gt; 通常設定為 origin，因為通常只會有一個遠端 repo 地址，若有多個就另外再取其他名稱。&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;repo 地址&lt;/code&gt; 是遠端 repo 的地址，透過這個地址就能夠在網路上找到 repo，把本地 repo 的程式碼同步上去。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;git push&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git push&lt;/code&gt; 將本地 repo 的版本同步到遠端 repo，這時候用到的 &lt;code class=&quot;language-text&quot;&gt;remote 名稱&lt;/code&gt; 就是剛才新增遠端 repo 地址時幫他取的名字，才不用每次都輸入超長的 &lt;code class=&quot;language-text&quot;&gt;repo 地址&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;repo 可以擁有許多分支 &lt;a href=&quot;https://git-scm.com/book/zh-tw/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%A2%9E%E8%88%87%E5%90%88%E4%BD%B5&quot;&gt;branch&lt;/a&gt;，&lt;code class=&quot;language-text&quot;&gt;分支名稱&lt;/code&gt; 則是 repo 的分支名稱，預設的名稱就是 master，push 的時候會把本地的 master 分支更新到遠端的 master 分支。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; push &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;遠端名稱&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;分支名稱&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;輸入完這兩個指令再重整一次剛才創建完 repo 的頁面就能看到程式碼了。&lt;/p&gt;
+&lt;h3&gt;git pull&lt;/h3&gt;
+&lt;p&gt;和其他人協作一個 repo 時，若 A 在本地 repo commit 了一個新版本並 push 到遠端 repo，B 可以用 pull 將新版本同步到 B 的本地repo：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; pull &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;remote name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;branch name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Git reset 回溯&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git reset&lt;/code&gt; 可以回溯版本，在介紹如何使用之前要先了解版本的表示方式，先輸入 &lt;code class=&quot;language-text&quot;&gt;git log --oneline&lt;/code&gt; 試試：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log --oneline
+f279135 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;HEAD -&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; master&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; update: intro
+6bc08b5 add: ga
+de80577 new: React 快速上手
+379acfa feat: code highlight
+8aafcb9 new: JS開發環境簡介
+0a9c979 feat: difficulty tag&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;最左邊的七個英數字代表簡化的版本編號（如果不加 oneline 就會看到完整的），右邊就是各版本的 commit 訊息。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;HEAD&lt;/code&gt; 是當前最新的版本，可以用以下方法表示其他版本：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; reset HEAD^     &lt;span class=&quot;token comment&quot;&gt;# 前一版&lt;/span&gt;
+$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; reset HEAD^^^   &lt;span class=&quot;token comment&quot;&gt;# 前三版&lt;/span&gt;
+$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; reset HEAD~5    &lt;span class=&quot;token comment&quot;&gt;# 前五版&lt;/span&gt;
+
+$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; reset 0a9c979   &lt;span class=&quot;token comment&quot;&gt;# 直接到版本號 0a9c979 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;git reset 參數&lt;/h3&gt;
+&lt;p&gt;主要有 &lt;code class=&quot;language-text&quot;&gt;--mixed&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;--soft&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;--hard&lt;/code&gt; 三種&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;--mixed&lt;/code&gt; 不會影響目前的程式碼，也是預設的參數，移動到指定的版本並清空暫存區。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; reset HEAD^
+Unstaged changes after reset:
+&lt;span class=&quot;token comment&quot;&gt;# 從暫存區移除的檔案資訊...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;--soft&lt;/code&gt; 不會影響目前的程式碼，移動到指定版本，把之前 commit 過的變動都放進暫存區。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;--hard&lt;/code&gt; 程式碼直接變成指定版本的樣子，謹慎服用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;其他好用指令&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git stash&lt;/code&gt; 可以回復到版本初始的樣子並把所有改動儲存起來，注意當前程式碼會改變：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; stash       &lt;span class=&quot;token comment&quot;&gt;# 回到版本初始狀態 &lt;/span&gt;
+$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; stash pop   &lt;span class=&quot;token comment&quot;&gt;# 復原 stash 的程式碼&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git diff&lt;/code&gt; 可以用來比較兩個本版的區別&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;diff&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;版本1&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;版本2&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git log&lt;/code&gt; 可以查看 git 的歷史以及版本號（按 q 退出）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log
+$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log --oneline&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git checkout&lt;/code&gt; 回復單一檔案至指定版本：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;版本&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;檔案名稱&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[React 快速上手]]></title><description><![CDATA[近年來前端開發框架漸漸從 JQuery 變為 Angular、Vue、React，JQuery 為何被取代呢？ Why React？ 有別於 JQuery 將邏輯和介面寫在一塊命令式語法，React…]]></description><link>https://sh1zuku.csie.io/blog/react/</link><guid isPermaLink="false">https://sh1zuku.csie.io/blog/react/</guid><pubDate>Tue, 12 Mar 2019 02:42:47 GMT</pubDate><content:encoded>&lt;p&gt;近年來前端開發框架漸漸從 JQuery 變為 Angular、Vue、React，JQuery 為何被取代呢？&lt;/p&gt;
 &lt;h2&gt;Why React？&lt;/h2&gt;
 &lt;p&gt;有別於 JQuery 將邏輯和介面寫在一塊命令式語法，React 是宣告式，將畫面呈現 (排版) 和 資料 (狀態) 分開，先定義好介面如何呈現，再將資料灌進去，每當資料改變就進行畫面重繪。&lt;/p&gt;
 &lt;p&gt;假設有幾個按鈕，可以改變文字的樣式：&lt;/p&gt;
@@ -181,7 +327,7 @@
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;span&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;specialClass&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;I am &quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot; years old.&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;後記&lt;/h2&gt;
 &lt;p&gt;一開始覺得不習慣是當然的，但寫了一陣子後就能感受到 React 的強大，熟悉基本語法後請務必去了解 &lt;a href=&quot;https://reactjs.org/docs/faq-internals.html#what-is-the-virtual-dom&quot;&gt;Virtual DOM&lt;/a&gt;、&lt;a href=&quot;https://reactjs.org/docs/state-and-lifecycle.html&quot;&gt;Component Lifecycle&lt;/a&gt; 加強觀念寫起來更順手。&lt;/p&gt;
-&lt;p&gt;同場加映 &lt;a href=&quot;https://medium.com/@shizukuichi/react-hooks-%E6%98%AF%E7%94%9A%E9%BA%BC%E8%AE%93%E6%88%91%E7%9B%B8%E4%BF%A1%E4%B8%80%E8%A6%8B%E9%8D%BE%E6%83%85-da222a937af2&quot;&gt;React Hooks&lt;/a&gt;，經歷 Lifecycle 的摧殘後再來試試 hooks 吧，你會發現世界一片光明、豁然開朗。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Javascript 開發環境簡介]]></title><description><![CDATA[為什麼 node_modules 裡面總是塞了一堆東西？ 本文會提到如何準備 Javascript 的開發環境以及專案架構。 Node.js 畢竟程式只是一堆文字，要有人負責把文字轉換成實際的動作並執行， Nodejs  就肩負這個重責大任。 從官方網站選擇 LTS…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//js-dev-env/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//js-dev-env/</guid><pubDate>Wed, 06 Mar 2019 05:32:29 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;同場加映 &lt;a href=&quot;https://medium.com/@shizukuichi/react-hooks-%E6%98%AF%E7%94%9A%E9%BA%BC%E8%AE%93%E6%88%91%E7%9B%B8%E4%BF%A1%E4%B8%80%E8%A6%8B%E9%8D%BE%E6%83%85-da222a937af2&quot;&gt;React Hooks&lt;/a&gt;，經歷 Lifecycle 的摧殘後再來試試 hooks 吧，你會發現世界一片光明、豁然開朗。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Javascript 開發環境簡介]]></title><description><![CDATA[為什麼 node_modules 裡面總是塞了一堆東西？ 本文會提到如何準備 Javascript 的開發環境以及專案架構。 Node.js 畢竟程式只是一堆文字，要有人負責把文字轉換成實際的動作並執行， Nodejs  就肩負這個重責大任。 從官方網站選擇 LTS…]]></description><link>https://sh1zuku.csie.io/blog/js-dev-env/</link><guid isPermaLink="false">https://sh1zuku.csie.io/blog/js-dev-env/</guid><pubDate>Wed, 06 Mar 2019 05:32:29 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;為什麼 node_modules 裡面總是塞了一堆東西？&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;本文會提到如何準備 Javascript 的開發環境以及專案架構。&lt;/p&gt;
@@ -221,7 +367,7 @@ $ npm install gh-pages -D&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;-G&lt;/code&gt; 代表是跟 npm 安裝在一起，也就是安裝一次之後，不管在哪都可以使用，不只侷限於某個專案資料夾內。&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;-D&lt;/code&gt; 代表是開發時才會用到的套件，會被列在 &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; 中的 &lt;code class=&quot;language-text&quot;&gt;devDependencies&lt;/code&gt;，雖然 &lt;code class=&quot;language-text&quot;&gt;npm install&lt;/code&gt; 時也會被安裝，但在安裝他人發布的套件時 npm 就會自動避開。&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[CSS 基礎]]></title><description><![CDATA[本篇教學適合剛接觸網頁排版的人，我會在教學中提及重要的基礎，了解後網頁基本的 Layout 以及樣式修改就不是問題囉！ 前情提要 網頁的骨架由 HTML 組成， CSS 就像是器官、外觀，Javascript 則是大腦，在此著重 CSS 的介紹。 HTML Tag…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//css-get-started/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//css-get-started/</guid><pubDate>Sat, 02 Mar 2019 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;本篇教學適合剛接觸網頁排版的人，我會在教學中提及重要的基礎，了解後網頁基本的 Layout 以及樣式修改就不是問題囉！&lt;/p&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[CSS 基礎]]></title><description><![CDATA[本篇教學適合剛接觸網頁排版的人，我會在教學中提及重要的基礎，了解後網頁基本的 Layout 以及樣式修改就不是問題囉！ 前情提要 網頁的骨架由 HTML 組成， CSS 就像是器官、外觀，Javascript 則是大腦，在此著重 CSS 的介紹。 HTML Tag…]]></description><link>https://sh1zuku.csie.io/blog/css-get-started/</link><guid isPermaLink="false">https://sh1zuku.csie.io/blog/css-get-started/</guid><pubDate>Sat, 02 Mar 2019 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;本篇教學適合剛接觸網頁排版的人，我會在教學中提及重要的基礎，了解後網頁基本的 Layout 以及樣式修改就不是問題囉！&lt;/p&gt;
 &lt;h1&gt;前情提要&lt;/h1&gt;
 &lt;p&gt;網頁的骨架由 HTML 組成， CSS 就像是器官、外觀，Javascript 則是大腦，在此著重 CSS 的介紹。&lt;/p&gt;
 &lt;p&gt;HTML Tag 有很多種如 &lt;code class=&quot;language-text&quot;&gt;div&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;span&lt;/code&gt; 等等，而最常看到的是 &lt;code class=&quot;language-text&quot;&gt;div&lt;/code&gt;，因為他幾乎沒有預設的 CSS 屬性，很適合作為基本的元素拿來修改樣式。&lt;/p&gt;
